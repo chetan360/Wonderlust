@@ -14,11 +14,13 @@
   </div>
 
   <p class="card-text offset-2">
+    <i>Owned by <%=listing.owner.username %></i> <br />
     <%= listing.description %> <br />
     Rs.<%= listing.price %> /night <br />
     <%= listing.location %> <br />
     <%= listing.country %>
   </p>
+
   <div class="btns offset-2 mb-3">
     <a href="/listings/<%= listing.id %>/edit" class="btn edit-btn">Edit</a
     ><br />
