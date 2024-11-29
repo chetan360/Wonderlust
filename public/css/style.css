@@ -131,3 +131,8 @@ body {
   box-shadow: 2px 2px 10px #ece8e8 !important;
   padding: 5px;
 }
+
+#map {
+  height: 400px;
+  width: 80vp;
+}
