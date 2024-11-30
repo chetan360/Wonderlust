@@ -36,6 +36,21 @@ const listingSchema = new Schema({
       required: true,
     },
   },
+  category: {
+    type: String,
+    enum: [
+      "Trending",
+      "Rooms",
+      "Iconic Cities",
+      "Mountain",
+      "Castles",
+      "Amazing Pools",
+      "Top of the world",
+      "Farm",
+      "Arctic",
+      "Hospitals",
+    ],
+  },
 });
 
 // avoid wrapAsync for mongoose middleware functions

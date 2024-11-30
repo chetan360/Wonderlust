@@ -24,6 +24,28 @@ body {
   color: #222222 !important;
 }
 
+.search-btn {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  border-radius: 25px;
+  padding: 0 1rem 0;
+}
+
+.search-btn:hover {
+  background-color: #ed3f4b !important;
+  color: #eee;
+}
+
+.search-btn i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.search-inp {
+  border-radius: 25px;
+  padding: 0.5rem 3rem;
+}
+
 /* footer */
 .f-info-links a {
   text-decoration: none;
@@ -135,4 +157,116 @@ body {
 #map {
   height: 400px;
   width: 80vp;
+}
+
+.all-filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sliderbar {
+  overflow-x: hidden; /* Ensure no overflow on the parent container */
+  position: relative; /* Position relative to the child elements (buttons and filters) */
+}
+
+.slide-container {
+  width: 100%;
+  max-width: 80vp; /* Allow full width on mobile */
+  box-sizing: border-box;
+  position: relative; /* Ensure positioning context for the buttons */
+}
+.slide-content {
+  overflow: hidden;
+}
+
+.filter > a {
+  text-decoration: none !important;
+  color: rgb(147, 146, 146);
+  opacity: 0.8;
+}
+
+.filter > a:hover {
+  color: rgb(44, 43, 43);
+  opacity: 1;
+}
+
+.filter {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 30px;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.swiper-navBtn {
+  color: rgb(147, 146, 146);
+  transition: color 0.3s ease;
+  z-index: 100;
+  border-radius: 50%; /* Ensure the buttons are circular */
+  padding: 15px;
+  background-color: #ece8e8;
+}
+
+.swiper-navBtn:hover {
+  color: rgb(44, 43, 43);
+  border-radius: 50%; /* Keep the button circular */
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2); /* Circular box-shadow */
+  opacity: 1;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-pagination-bullet {
+  background-color: rgb(147, 146, 146);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: rgb(44, 43, 43);
+}
+
+.swiper-navBtn {
+  --swiper-navigation-size: 15px;
+  --swiper-navigation-color: rgb(147, 146, 146);
+}
+
+.swiper-pagination-bullet {
+  --swiper-pagination-color: rgb(147, 146, 146);
+}
+
+.tax-toggle {
+  padding: 10px 5px;
+  border: 2px solid rgb(147, 146, 146);
+  width: 55%;
+  height: auto;
+  margin: 50px 40px 30px 40px;
+  border-radius: 10px;
+}
+
+.tax-info {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-navBtn {
+    display: none;
+  }
+
+  .slide-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .all-filters {
+    flex-direction: column;
+  }
+
+  .tax-toggle {
+    width: 50%;
+  }
 }
