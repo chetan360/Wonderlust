@@ -11,6 +11,11 @@ module.exports.listingSchema = Joi.object({
       filename: Joi.string(),
       url: Joi.string(),
     }),
+    geometry: Joi.object({
+      type: Joi.string().valid("Point").required(), // Correcting this line
+      coordinates: Joi.array(),
+    }),
+    category: Joi.string().required(),
   }).required(),
 });
 

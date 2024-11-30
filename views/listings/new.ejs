@@ -35,6 +35,25 @@
         <div class="invalid-feedback">Discription should be valid.</div>
       </div>
       <div class="mb-3">
+        <label for="category" class="form-label">Select Category</label>
+        <select
+          class="form-select form-select-lg mb-3"
+          id="category"
+          name="listing[category]"
+        >
+          <option selected value="Trending">Trending</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Iconic Cities">Iconic Cities</option>
+          <option value="Mountain">Mountain</option>
+          <option value="Castles">Castles</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+          <option value="Top of the world">Top of the world</option>
+          <option value="Farm">Farm</option>
+          <option value="Arctic">Arctic</option>
+          <option value="Hospitals">Hospitals</option>
+        </select>
+      </div>
+      <div class="mb-3">
         <label for="image" class="form-label">Upload Listing Image</label>
         <input
           type="file"
