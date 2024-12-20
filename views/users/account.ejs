@@ -1,0 +1,121 @@
+<% layout("./layouts/boilerplate") %>
+
+<div class="row mt-5">
+  <div class="col-10 offset-1 mb-3">
+    <h2 class="fw-bolder">Account</h2>
+    <p>
+      <b
+        ><%= currUser.username.split(" ")[0].substring(0,1).toUpperCase() +
+        currUser.username.split(" ")[0].substring(1) %>,</b
+      >
+      <%= currUser.email %>
+      <a href="" id="go-to-profile"><b>Go to profile</b></a>
+    </p>
+    <div class="row mt-5 row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-id-card mb-4 p-2"></i><br />
+            <a href=""><b>Personal Info</b></a>
+            <p>Provide personal details and how we can reach you</p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-shield mb-4 p-2"></i><br />
+            <a href=""><b>Login and security</b></a>
+            <p>Update your password and secure your account</p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-money-bill mb-4 p-2"></i><br />
+            <a href=""><b>Payment &amp; payout</b></a>
+            <p>Review payment, payouts and gifts cards</p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-regular fa-file mb-4 p-2"></i><br />
+            <a href=""><b>Taxes</b></a>
+            <p>Manage taxplayer information and tax documents</p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-bullhorn mb-4 p-2"></i><br />
+            <a href=""><b>Notifications</b></a>
+            <p>
+              Choose notifications preferences and how you want to be connected
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-eye mb-4 p-2"></i><br />
+            <a href=""><b>Privacy &amp; sharing</b></a>
+            <p>
+              Manage your persanal data, connected services and data sharing
+              settings
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-toggle-on mb-4 p-2"></i><br />
+            <a href=""><b>Global preferences</b></a>
+            <p>Set your default language, currency, and time zone</p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-handshake mb-4 p-2"></i><br />
+            <a href=""><b>Travel &amp; work</b></a>
+            <p>Add a work email for bussiness trip benefits</p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-signal mb-4 p-2"></i><br />
+            <a href=""><b>Professional hosting tools</b></a>
+            <p>
+              Get professional tools if you manage several properties on
+              WanderLust
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card account-cards pt-2 me-3 mb-3">
+        <div class="card-body">
+          <div class="card-text">
+            <i class="fa-solid fa-gift mb-4 p-2"></i><br />
+            <a href=""><b>Referral credit &amp; coupons</b></a>
+            <p>
+              Your referral credits and coupon balance is &#8377;0. Learn more.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="del-acc text-center mb-4">
+      <p>Need to deactivate your account?</p>
+      <a href="">Take care of that now</a>
+    </div>
+  </div>
+</div>

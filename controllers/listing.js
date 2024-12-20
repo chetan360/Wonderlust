@@ -65,7 +65,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.geometry = response.body.features[0].geometry;
 
   let savedListing = await newListing.save();
-  console.log(savedListing);
+  // console.log(savedListing);
   req.flash("success", "New Listing added.");
   res.redirect("/listings");
 };
@@ -123,7 +123,8 @@ module.exports.destroyListing = async (req, res) => {
     res.redirect("/listings");
   }
 
-  await Listing.deleteOne({ _id: id });
+  // calling post middleware for deleting listing related reviews as well
+  await Listing.findOneAndDelete({ _id: id });
   req.flash("success", "Listing deleted.");
   res.redirect("/listings");
 };

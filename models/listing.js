@@ -54,10 +54,11 @@ const listingSchema = new Schema({
 });
 
 // avoid wrapAsync for mongoose middleware functions
-listingSchema.post("findOneAndDelete", async (listing) => {
+listingSchema.post("findOneAndDelete", async (listing, next) => {
   if (listing) {
     await Review.deleteMany({ _id: { $in: listing.reviews } });
   }
+  next();
 });
 
 const Listing = mongoose.model("Listing", listingSchema);

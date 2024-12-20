@@ -23,6 +23,25 @@ router
     userController.login
   );
 
+// Google login route
+router.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+// Google callback route
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  (req, res) => {
+    // Successful authentication
+    req.flash("success", "Welcome to Wonderlust!");
+    res.redirect("/listings");
+  }
+);
+
 router.get("/logout", userController.logout);
+
+router.get("/account", userController.account);
 
 module.exports = router;

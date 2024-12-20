@@ -60,15 +60,17 @@ var swiper = new Swiper(".slide-content", {
   },
 });
 
-const taxSwitch = document.getElementById("flexSwitchCheckDefault");
+const showProfile = document.getElementById("profile-btn");
+const loginMenu = document.getElementById("login-menu");
 
-taxSwitch.addEventListener("click", function () {
-  let taxInfo = document.getElementsByClassName("tax-info");
-  for (info of taxInfo) {
-    if (info.style.display != "inline") {
-      info.style.display = "inline";
-    } else {
-      info.style.display = "none";
-    }
+let loginClicked = false;
+showProfile.addEventListener("click", function () {
+  loginClicked = !loginClicked;
+  if (loginClicked) {
+    showProfile.innerHTML = "<i class='fa-solid fa-xmark'></i>";
+    loginMenu.classList.add("show");
+  } else {
+    showProfile.innerHTML = "<i class='fa-solid fa-bars'></i>";
+    loginMenu.classList.remove("show");
   }
 });

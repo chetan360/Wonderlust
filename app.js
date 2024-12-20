@@ -20,6 +20,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 // const MONGO_URL = "mongodb://localhost:27017/wonderlust";
 const dbUrl = process.env.ATLASDB_URL;
@@ -70,9 +71,53 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: process.env.GOOGLE_CALLBACK_URL,
+      // Set this to your callback URL
+      scope: ["profile", "email"], // Request the profile and email scopes
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      try {
+        let user = await User.findOne({ googleId: profile.id });
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+        if (!user) {
+          user = new User({
+            username: profile.displayName,
+            email: profile.emails[0].value,
+            googleId: profile.id,
+          });
+
+          await user.save();
+        }
+
+        done(null, user);
+      } catch (error) {
+        done(error, false);
+      }
+    }
+  )
+);
+
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+
+// Serialize and deserialize user
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await User.findById(id); // Fetch the user from the database
+    done(null, user); // Pass the user to the done callback
+  } catch (err) {
+    done(err, null); // Handle any potential errors by passing them to done
+  }
+});
 
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");

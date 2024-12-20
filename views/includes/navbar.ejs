@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"
-      ><i class="fa-regular fa-compass"></i
+      ><i class="fa-brands fa-airbnb" id="explore"></i
     ></a>
     <button
       class="navbar-toggler"
@@ -16,31 +16,66 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" id="explore" href="/listings">wanderlust</a>
       </div>
       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search" method="get" action="/listings">
           <input
-            class="form-control me-2 search-inp"
+            class="form-control me-2 search-inp rounded-pill"
             type="search"
             name="search"
             placeholder="Country, Title"
           />
-          <button class="btn search-btn my-2 my-sm-0" type="submit">
+          <button
+            class="btn search-btn my-2 my-sm-0 rounded-pill"
+            type="submit"
+          >
             <i class="fa-solid fa-magnifying-glass"></i>Search
           </button>
         </form>
       </div>
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
-        <% if(!currUser) { %>
-        <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-        <a class="nav-link" href="/login"><b>Login</b></a>
-        <%} if(currUser) {%>
 
-        <a class="nav-link" href="/logout">Logout</a>
-        <% }%>
+      <div class="navbar-nav ms-auto">
+        <div class="d-flex justify-content-between align-items-center">
+          <a
+            class="me-3 text-black text-decoration-none p-2 rounded-pill"
+            id="airbnb"
+            href="/listings/new"
+            >Airbnb your home</a
+          >
+          <i class="fa-solid fa-globe me-3 p-2" id="glob"></i>
+          <div class="navbar-nav ms-auto d-flex show-profile rounded-pill">
+            <button id="profile-btn" class="profile-btn">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa7R8Awhh9J13KW8sfKx6cSZldD0VBW2wm6A&s"
+              alt="img"
+              class="profile-img"
+              id="profile-img"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </nav>
+
+<div id="login-menu" class="login-menu">
+  <% if(!currUser) { %>
+  <a class="ps-4" href="/login"><b>Login</b></a>
+  <a class="ps-4" href="/signup">Sign Up</a>
+  <hr />
+
+  <%} if(currUser) {%>
+  <a class="ps-4" href="/user/messages"><b>Messeges</b></a>
+  <a class="ps-4" href="/user/notifications"><b>Notifications</b></a>
+  <hr />
+  <a class="ps-4" href="/listings/new">Airbnb your home</a>
+  <a class="ps-4" href="/account">Account</a>
+  <hr />
+  <a class="ps-4" href="/logout">Logout</a>
+  <a class="ps-4" href="/helpcenter">Help Center</a>
+  <% } %>
+  <a class="ps-4" href="/helpcenter">Help Center</a>
+</div>

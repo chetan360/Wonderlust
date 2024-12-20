@@ -15,6 +15,14 @@ body {
   background: #fff;
 }
 
+#explore {
+  color: #fe424d !important;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
 .fa-compass {
   color: #fe424d;
   font-size: 2rem;
@@ -42,8 +50,120 @@ body {
 }
 
 .search-inp {
-  border-radius: 25px;
   padding: 0.5rem 3rem;
+}
+
+.show-profile {
+  border: 1px solid silver;
+  padding: 5px 10px;
+  width: 85px;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-btn {
+  border: none;
+  background: transparent;
+  margin-left: 5px;
+}
+
+.profile-btn i {
+  font-size: 15px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+#glob:hover {
+  border-radius: 50%;
+  background: #eee;
+}
+
+#airbnb:hover {
+  background: #eee;
+}
+
+.login-menu {
+  padding: 15px 0;
+  display: flex;
+  line-height: 2.5rem !important;
+  font-size: 0.9rem !important;
+  flex-direction: column;
+  width: 250px;
+  height: auto;
+  background: #fff;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  position: fixed;
+  right: 0;
+  margin-right: 20px;
+  top: 85px;
+  z-index: 100;
+  opacity: 0;
+  display: none;
+}
+
+.show {
+  display: flex;
+  opacity: 1;
+}
+
+.login-menu a {
+  text-decoration: none;
+  color: #222222;
+  cursor: pointer;
+}
+
+.login-menu a:hover {
+  background-color: #e8e7e7;
+}
+
+/* account page */
+#go-to-profile {
+  color: #000;
+}
+
+.account-cards {
+  width: 320px !important;
+  height: auto;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.account-cards i {
+  font-size: 1.8rem;
+}
+
+.account-cards p,
+.account-cards a {
+  font-size: 0.9rem;
+}
+
+.account-cards a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.account-cards p {
+  color: #757272 !important;
+}
+
+.del-acc {
+  line-height: 0.5;
+}
+
+.del-acc p {
+  font-style: 0.8rem;
+}
+
+.del-acc a {
+  color: #000;
+  font-size: 0.8rem;
+  cursor: pointer;
 }
 
 /* footer */
@@ -90,13 +210,13 @@ body {
 /* Cards */
 .card {
   border: none !important;
-  margin: 0 2rem 2rem 0;
 }
 
 .card-img-top {
-  border-radius: 1rem;
-  width: 100% !important;
+  width: 350px !important;
   object-fit: cover !important;
+  height: 350px !important;
+  border-radius: 15px !important;
 }
 
 .card-body {
@@ -121,6 +241,10 @@ body {
   background: #fff;
 }
 
+.review-card {
+  max-width: 25rem;
+}
+
 /* Edit page */
 .add-btn,
 .edit-btn {
@@ -139,6 +263,11 @@ body {
   height: 30vh;
 }
 
+.card-show-img {
+  max-width: 700px !important;
+  max-height: 400px;
+}
+
 .row .btns {
   display: flex;
 }
@@ -155,8 +284,9 @@ body {
 }
 
 #map {
+  width: 100% !important;
+  max-width: 600px !important;
   height: 400px;
-  width: 80vp;
 }
 
 .all-filters {
@@ -181,12 +311,12 @@ body {
 
 .filter > a {
   text-decoration: none !important;
-  color: rgb(147, 146, 146);
-  opacity: 0.8;
+  color: black;
+  opacity: 0.6;
 }
 
 .filter > a:hover {
-  color: rgb(44, 43, 43);
+  color: black;
   opacity: 1;
 }
 
@@ -204,15 +334,18 @@ body {
   color: rgb(147, 146, 146);
   transition: color 0.3s ease;
   z-index: 100;
+  border: 1px solid silver;
   border-radius: 50%; /* Ensure the buttons are circular */
   padding: 15px;
-  background-color: #ece8e8;
+  box-shadow: 0 0 20px 20px #eee;
+  background-color: #fff;
+  margin: 0 20px;
 }
 
 .swiper-navBtn:hover {
   color: rgb(44, 43, 43);
   border-radius: 50%; /* Keep the button circular */
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2); /* Circular box-shadow */
+  box-shadow: 0 0 20px 20px #e8e5e5; /* Circular box-shadow */
   opacity: 1;
 }
 
@@ -252,6 +385,25 @@ body {
   display: none;
 }
 
+/* login page */
+.login-btn {
+  background-color: #fe424d !important;
+  color: #fff !important;
+}
+
+.login-btn:hover {
+  background-color: #ed3f4b !important;
+}
+
+.login-with-google-btn {
+  color: #222222 !important;
+  border: 1px solid #222222 !important;
+}
+
+.login-with-google-btn:hover {
+  background-color: #eee !important;
+}
+
 @media screen and (max-width: 768px) {
   .swiper-navBtn {
     display: none;
@@ -268,5 +420,9 @@ body {
 
   .tax-toggle {
     width: 50%;
+  }
+
+  .review-card {
+    max-width: 20rem;
   }
 }
