@@ -167,44 +167,50 @@ body {
 }
 
 /* footer */
-.f-info-links a {
-  text-decoration: none;
-  color: #222222;
+.contact {
+  background-color: #c7c5c520;
+  padding: 30px 80px;
+  border-radius: 0 0 15px 15px;
 }
 
-.f-info-links:hover {
+.heading {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  gap: 3rem;
+}
+
+.contact-info p {
+  color: #000;
   text-decoration: underline;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 1.5;
+  cursor: pointer;
+  transform: all 0.42s;
 }
 
-.f-info-links {
-  width: 100%;
-}
-
+.third-info h4,
 .f-info-socials {
-  width: 100%;
-  font-size: 1.2rem;
+  color: #000;
 }
 
-.f-info-socials,
-.f-info-links,
-.f-info-brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.third-info .f-info-socials i {
+  margin: 5px 5px 20px 5px;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
-.f-info-socials i {
-  margin: 0 0.5rem;
-}
-
-.f-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 8rem;
-  background: #ebebeb;
-  flex-wrap: wrap;
+.third-info .f-info-socials i:hover {
+  color: #676363;
+  font-size: 1.6rem;
 }
 
 /* Cards */

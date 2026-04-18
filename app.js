@@ -22,7 +22,8 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-// const MONGO_URL = "mongodb://localhost:27017/wonderlust";
+const MONGO_URL = "mongodb://localhost:27017/wonderlust";
+// const dbUrl = MONGO_URL;
 const dbUrl = process.env.ATLASDB_URL;
 
 async function main() {
@@ -98,8 +99,8 @@ passport.use(
       } catch (error) {
         done(error, false);
       }
-    }
-  )
+    },
+  ),
 );
 
 // passport.serializeUser(User.serializeUser());
