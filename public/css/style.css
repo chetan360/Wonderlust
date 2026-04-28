@@ -219,14 +219,15 @@ body {
 }
 
 .card-img-top {
-  width: 350px !important;
+  width: 20rem !important;
   object-fit: cover !important;
-  height: 350px !important;
+  height: 20rem !important;
   border-radius: 15px !important;
 }
 
 .card-body {
   padding: 0 !important;
+  width: 20rem;
 }
 
 .card-text p {
@@ -240,6 +241,7 @@ body {
 /* Card Effect */
 .card-img-overlay {
   opacity: 0;
+  width: 23rem;
 }
 
 .card-img-overlay:hover {

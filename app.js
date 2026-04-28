@@ -22,7 +22,12 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-const MONGO_URL = "mongodb://localhost:27017/wonderlust";
+// // 1. MUST BE AT THE VERY TOP OF THE FILE
+// const dns = require("dns");
+// dns.setServers(["8.8.8.8", "8.8.4.4"]); // Force Node to use Google DNS
+// require("node:dns").setDefaultResultOrder("ipv4first"); // Force IPv4
+
+// const MONGO_URL = "mongodb://localhost:27017/wonderlust";
 // const dbUrl = MONGO_URL;
 const dbUrl = process.env.ATLASDB_URL;
 
